@@ -71,6 +71,7 @@ git checkout $MODEL_CODE_BRANCH
 
 # Model specific dependancies 
 
+###create wav2vec directory in local host(s). copy data from librispeech gcs bucket
 COMMAND="
 mkdir /wav2vec && \
 gsutil -m cp -r gs://wav2vec-eu/LibriSpeech/ /wav2vec/ && \
