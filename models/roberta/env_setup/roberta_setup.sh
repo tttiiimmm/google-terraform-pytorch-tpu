@@ -26,8 +26,8 @@ ENV_SETUP_REPO='https://github.com/mugithi/google-terraform-pytorch-tpu.git'
 ENV_SETUP_BRANCH='master'
 
 ## MODEL CODE REPO 
-MODEL_CODE_REPO="https://github.com/taylanbil/fairseq.git"
-MODEL_CODE_BRANCH='roberta-tpu'
+MODEL_CODE_REPO="https://github.com/ultrons/fairseq.git"
+MODEL_CODE_BRANCH='fairseq-dev'
 
 ############################################################
 #####  Things that only run in one host ####################
@@ -72,6 +72,8 @@ git checkout $MODEL_CODE_BRANCH
 # Model specific dependancies 
 
 COMMAND="
+mkdir /wav2vec && \
+gsutil -m cp -r gs://wav2vec-eu/LibriSpeech/ /wav2vec/ && \
 cd '$MOUNT_POINT'/nfs_share/model_code && \
 source /anaconda3/etc/profile.d/conda.sh && \
 conda activate torch-xla-nightly && \
