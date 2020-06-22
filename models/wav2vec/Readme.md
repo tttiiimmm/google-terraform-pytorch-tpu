@@ -11,7 +11,7 @@ Use the `wav2vec_setup` to prepare the enviroment for training
 
 ```
 source /tmp/values.env
-bash -xe $MOUNT_POINT/nfs_share/models/roberta/env_setup/wav2vec_setup.sh
+bash -xe $MOUNT_POINT/nfs_share/models/wav2vec/env_setup/wav2vec_setup.sh
 ```
 
 #### 2a. This script will do the following

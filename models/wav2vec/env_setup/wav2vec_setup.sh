@@ -75,7 +75,7 @@ git checkout $MODEL_CODE_BRANCH
 COMMAND="
 sudo mkdir /home/wav2vec && \
 sudo chmod -R 777 /home/wav2vec && \
-sudo gsutil -m cp -r gs://wav2vec-eu/LibriSpeech/ /wav2vec/ && \
+sudo gsutil -m cp -r gs://wav2vec-eu/LibriSpeech/ /home/wav2vec/ && \
 cd '$MOUNT_POINT'/nfs_share/model_code && \
 source /anaconda3/etc/profile.d/conda.sh && \
 conda activate torch-xla-nightly && \
