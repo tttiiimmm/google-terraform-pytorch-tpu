@@ -73,10 +73,11 @@ git checkout $MODEL_CODE_BRANCH
 
 ###create wav2vec directory in local host(s). copy data from librispeech gcs bucket
 COMMAND="
-sudo chmod -R 777 /mnt/common/nfs_share/
+sudo chmod -R 777 /mnt/common/nfs_share/ && \
 sudo mkdir /home/wav2vec && \
 sudo chmod -R 777 /home/wav2vec && \
 sudo gsutil -m cp -r gs://wav2vec-eu/LibriSpeech/ /home/wav2vec/ && \
+sudo chmod -R 777 /home/wav2vec/LibriSpeech && \
 cd '$MOUNT_POINT'/nfs_share/model_code && \
 source /anaconda3/etc/profile.d/conda.sh && \
 conda activate torch-xla-nightly && \
